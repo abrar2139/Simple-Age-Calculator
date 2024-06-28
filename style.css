@@ -145,9 +145,11 @@ outline-style: dashed;
 @media (max-width:638px) {
 #heading{
     text-align: center;
+    font-size: 30px;
     }
     #result{
         text-align: center;
+        font-size: 25px;
     }
     #date{
         width: 100%;
