@@ -9,6 +9,7 @@
     --heading:black ;
 }
 html,body{
+    position: relative;
     min-height: 100vh;
     width: 100%;
     display: flex;
@@ -20,6 +21,58 @@ html,body{
     transition: background 10s ease-in-out;
     overflow: hidden;
 }
+
+.button {
+    transition: all .5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background:radial-gradient(black,white);
+    cursor: pointer;
+    z-index: 9999;
+}
+@keyframes rotate {
+    from {
+        transform: rotateY(0deg);
+      }
+      to {
+        transform: rotateY(-360deg);}
+}
+@keyframes moving {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.button .fa-moon{
+    animation: rotate 2s infinite linear;
+    color: yellow !important
+    ;
+}
+.button .fa-sun{
+    animation: moving 2s infinite linear;
+}
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(135deg,black,white);
+    clip-path: circle(0% at calc(100% - 30px) 30px);
+    transition: clip-path 1s ease-out;
+}
+
+.container.active {
+    clip-path: circle(150% at calc(100% - 35px) 35px);
+}
+
+
 #heading{
     color:var(--heading);
     font-size: 40px;
@@ -33,6 +86,8 @@ html,body{
 #age-calculator{
     max-width: 600px;
     margin-top: 100px;
+    position: relative;
+z-index: 999;
 }
 #input-box{
     margin: 20px 0;
@@ -64,7 +119,10 @@ html,body{
 #input-box #para{
     font-size: 18px;
     color: blue;
-    text-align: center;
+    /* text-align: center; */
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
 }
 .field{
     width: 20%;
@@ -76,6 +134,7 @@ html,body{
     position: relative;
     outline: none;
     border-radius: 5px;
+    transition: width .5s ease-in-out;
 }
 #inputs input:focus{
 outline-width: 2px;
@@ -86,6 +145,18 @@ outline-style: dashed;
 #inputs input:hover{
     background: radial-gradient(white,blue);
 }
+#btns{
+    width: 100%;
+    display: flex;
+    /* justify-content: center; */
+    gap: 10px;
+    flex-wrap: wrap-reverse;
+
+    /* justify-content: space-around;
+    flex-wrap: wrap-reverse;
+    align-items: center;
+    gap: 10px; */
+}
 #reset-btn:hover, #btn:hover{
     color: white;
 }
@@ -93,8 +164,8 @@ outline-style: dashed;
     width: 0;
 }
 #reset-btn{
-    padding: 6px 12px ;
-    font-size: 16px;
+    padding: 11px 22px ;
+    font-size: 18px;
     font-weight: bold;
     background-color: red;
     border: none;
@@ -124,8 +195,8 @@ outline-style: dashed;
     z-index: -1;
 }
 #btn{
-    padding: 15px 30px;
-    background-color: var(--background1);
+    padding: 11px 22px;
+    background-color: green;
     color: var(--heading);
     font-size: 18px;
     font-weight: bold;
@@ -134,9 +205,26 @@ outline-style: dashed;
     cursor: pointer;
     border-radius: 5px;
     transition: color .5s ease-in-out;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+#btn::before{
+    transition: width .5s ease-in-out;
+    content: '';
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color:blue ;
+    z-index: -1;
+}
+#btn:hover::before{
+    width: 0;
 }
 #result{
-    color:palevioletred ;
+    color:white;
     font-size: 30px;
 }
 #result span{
@@ -176,7 +264,13 @@ outline-style: dashed;
     #inputs input{
 width: 100%;
     }
+    #input-box #para{
+        text-align: center;
+        justify-content: center;
+    }
+    #btns{
+        justify-content: center;
 }
 
-
+}
 

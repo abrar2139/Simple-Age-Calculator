@@ -1,3 +1,25 @@
+let icon = document.querySelector('.button i');
+let button = document.querySelector('.button');
+let heading = document.querySelector('#heading');
+console.log(icon);
+button.addEventListener('click', function() {
+    const background = document.querySelector('.container');
+    background.classList.toggle('active');
+
+        if (icon.classList.contains('fa-moon')) {
+            icon.classList.remove('fa-moon');
+            button.style.background='radial-gradient(orange,yellow)'
+            icon.classList.add('fa-sun');
+            heading.style.color='white'
+            heading.style.transition='color 2s ease'
+        } else {
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+            heading.style.color='black'
+            button.style.background='radial-gradient(black,white)'
+        }
+});
+
 function validateNumberInput(input) {
     input.value = input.value.replace(/\D/g, '');
 }
@@ -64,19 +86,19 @@ if(y1===y2 && m1===m2 && d1===d2){
 
     let totalResult =`You are `;
     if (y3 > 0) {
-        totalResult+=`${y3} ${yearString}`
+        totalResult+=`<span>${y3}</span> ${yearString}`
     }
     if (m3 > 0) {
     if(y3 > 0) {
   totalResult+=  `, `
 }
-        totalResult+=` ${m3} ${monthString}`
+        totalResult+=` <span>${m3}</span> ${monthString}`
     }
     if (d3 > 0) {
         if (y3 > 0 || m3 > 0) {
             totalResult+=` and `
         }
-        totalResult+=`${d3} ${dayString} old.`
+        totalResult+=`<span>${d3}</span> ${dayString} old.`
     }else{
         totalResult+=` old.`
     }

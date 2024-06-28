@@ -4,23 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/6e57dde102.js" crossorigin="anonymous"></script>
     <title>Age Calculator</title>
 </head>
 <body>
-    <div id="age-calculator">
-        <h1 id="heading">Age Calculator</h1>
-        <form id="input-box">
-            <p id="para">You should enter data in numbers.</p>
+    <div class="container">
+    </div>
+    <div class="button"><i class='fa-solid fa-moon' style='font-size:18px;color:orange'></i></div>
+        <div id="age-calculator">
+
+
+
+            <h1 id="heading">Age Calculator</h1>
+            <form id="input-box">
+                <p id="para">You should enter data in numbers.</p>
             <div id="inputs">
                 <input name="day" type="text" required minlength="1" maxlength="2" oninput="validateNumberInput(this)" placeholder="Your birth date" id="day" class="field">
                 <input name="month" type="text" required minlength="1" maxlength="2" oninput="validateNumberInput(this)" placeholder="Your birth month" id="month" class="field">
                 <input name="year" type="text" required minlength="4" maxlength="4" oninput="validateNumberInput(this)" placeholder="Your birth year" id="year" class="field">
             </div>
-            <button type="submit" id="btn">Calculate</button>
-            <button type="button" id="reset-btn">Reset</button>
+            <div id="btns">
+                
+                <button type="button" id="reset-btn">Reset</button>
+                <button type="submit" id="btn">Calculate</button>
+            </div>
         </form>
         <div id="result"></div>
-    </div>
+</div>
     <script src="script.js"></script>
 </body>
 </html>
