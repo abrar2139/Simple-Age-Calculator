@@ -10,10 +10,11 @@
     <div id="age-calculator">
         <h1 id="heading">Age Calculator</h1>
         <form id="input-box">
+            <p id="para">You should enter data in numbers.</p>
             <div id="inputs">
-                <input name="day" type="text" required minlength="1" maxlength="2" oninput="validateNumberInput(this)" placeholder="dd" id="day" class="field">
-                <input name="month" type="text" required minlength="1" maxlength="2" oninput="validateNumberInput(this)" placeholder="mm" id="month" class="field">
-                <input name="year" type="text" required minlength="4" maxlength="4" oninput="validateNumberInput(this)" placeholder="yyyy" id="year" class="field">
+                <input name="day" type="text" required minlength="1" maxlength="2" oninput="validateNumberInput(this)" placeholder="Your birth date" id="day" class="field">
+                <input name="month" type="text" required minlength="1" maxlength="2" oninput="validateNumberInput(this)" placeholder="Your birth month" id="month" class="field">
+                <input name="year" type="text" required minlength="4" maxlength="4" oninput="validateNumberInput(this)" placeholder="Your birth year" id="year" class="field">
             </div>
             <button type="submit" id="btn">Calculate</button>
             <button type="button" id="reset-btn">Reset</button>

@@ -25,12 +25,17 @@ html,body{
     font-size: 40px;
     font-weight: bold;
 }
+@media (max-width:300px) {
+    #heading{
+        font-size: 30px;
+    }
+}
 #age-calculator{
     max-width: 600px;
     margin-top: 100px;
 }
 #input-box{
-    margin: 40px 0;
+    margin: 20px 0;
     padding: 35px;
     background-color: gainsboro;
     display: flex;
@@ -56,12 +61,17 @@ html,body{
    gap: 10px;
 
 }
+#input-box #para{
+    font-size: 18px;
+    color: blue;
+    text-align: center;
+}
 .field{
     width: 20%;
     padding: 14px 20px;
     flex: 1;
     border: 0;
-    font-size: 18px;
+    font-size: 16px;
     padding-right: 5px;
     position: relative;
     outline: none;
