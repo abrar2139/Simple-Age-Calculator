@@ -1,0 +1,170 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --background1:blue ;
+    --background2:white ;
+    --heading:black ;
+}
+html,body{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    padding: 10px;
+    background:linear-gradient(135deg,var(--background1),var(--background2)) ;
+    transition: background 10s ease-in-out;
+    overflow: hidden;
+}
+#heading{
+    color:var(--heading);
+    font-size: 40px;
+    font-weight: bold;
+}
+#age-calculator{
+    max-width: 600px;
+    margin-top: 100px;
+}
+#input-box{
+    margin: 40px 0;
+    padding: 35px;
+    background-color: gainsboro;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    gap: 15px;
+}
+#input-box input::-webkit-calendar-picker-indicator{
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: auto;
+    position: absolute;
+    background-position: calc(100% - 5px);
+    background-size: 15px;
+    cursor: pointer;
+    height: auto;
+}
+#inputs{
+    display: flex;
+   gap: 10px;
+
+}
+.field{
+    width: 20%;
+    padding: 14px 20px;
+    flex: 1;
+    border: 0;
+    font-size: 18px;
+    padding-right: 5px;
+    position: relative;
+    outline: none;
+    border-radius: 5px;
+}
+#inputs input:focus{
+outline-width: 2px;
+outline-color: blue;
+outline-style: dashed;
+
+}
+#inputs input:hover{
+    background: radial-gradient(white,blue);
+}
+#reset-btn:hover, #btn:hover{
+    color: white;
+}
+#reset-btn:hover::before{
+    width: 0;
+}
+#reset-btn{
+    padding: 6px 12px ;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: red;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    transition: color .5s ease-in-out
+}
+
+
+@keyframes show{
+100%{  width: 100%;}}
+#reset-btn::before{
+    transition: width .5s ease-in-out;
+    content: '';
+    top: 0;
+    right: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: blue;
+    /* animation: show 1s ease forwards;
+    animation-delay: .1s; */
+    z-index: -1;
+}
+#btn{
+    padding: 15px 30px;
+    background-color: var(--background1);
+    color: var(--heading);
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: color .5s ease-in-out;
+}
+#result{
+    color:palevioletred ;
+    font-size: 30px;
+}
+#result span{
+    color: var(--heading);
+}
+@media (max-width:638px) {
+#heading{
+    text-align: center;
+    }
+    #result{
+        text-align: center;
+    }
+    #date{
+        width: 100%;
+        margin-right: 0;
+    }
+    #age-calculator{
+        width: 95%;
+    margin-top: 0px;
+
+    }
+    #input-box{
+        flex-direction: column;
+        justify-content:space-between ;
+        gap: 20px;
+        padding:35px 10px;
+    }
+    body{
+        padding: 0 ;
+    }
+    #inputs{
+        flex-direction: column;
+        width: 100%;
+    }
+    #inputs input{
+width: 100%;
+    }
+}
+
+
+
